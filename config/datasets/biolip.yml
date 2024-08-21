@@ -1,0 +1,21 @@
+dataset_type: 'biolip_dataset'
+df_path: '/home/HR/PIXberts/datasets/BioLiP2/pretrain_length_750_clean.csv'
+batch_size: 20
+data_root: '/home/HR/PIXberts/datasets/BioLiP2/PDBs'
+num_workers: 0
+col_prot_name: PDB
+col_prot_chain: Protein chains
+col_na_chain: RNA chains
+col_binding_site: Binding site renumbered merged
+col_ligand: Binding ligands
+pin_memory: True
+cache_dir: './cache/biolip'
+loss_type: regression
+strategy: separate
+
+transform:
+  - type: select_atom
+    resolution: backbone  # [backbone, backbone+CB, C_Only]
+  - type: selected_region_with_distmap
+    patch_size: 256
+  - type: subtract_center_of_mass

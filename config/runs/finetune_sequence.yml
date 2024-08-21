@@ -1,0 +1,10 @@
+epochs: 30
+patience: 50
+output_dir: './outputs/esm2rinalmo_650M/finetune_sequence/with_transformer_pdbbind_dG_restrict_remove_cls_token'
+gpus:
+  - 4
+  # - 7
+ckpt: null
+run_name: 'esm2_rinalmo_650M_clstoken'
+wandb: true
+num_folds: 5

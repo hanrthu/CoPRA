@@ -1,0 +1,39 @@
+resume: null
+model: 
+  model_type: esm2_rinalmo_seq
+  esm_type: 650M
+  pooling: mean
+  output_dim: 1
+  fix_lms: True
+  lora_tune: false
+  lora_rank: 16
+  lora_alpha: 32
+  vallina: True
+  representation_layer: 33
+  transformer: 
+    embed_dim: 320
+    num_blocks: 6
+    num_heads: 20
+    use_rot_emb: true
+    attn_qkv_bias: false
+    attention_dropout: 0.1
+    transition_dropout: 0.0
+    residual_dropout: 0.1
+    transition_factor: 4
+    use_flash_attn: false
+train:
+  max_iters: 30_000
+  val_freq: 1000
+  seed: 2024
+  # max_grad_norm: 100.0
+  optimizer:
+    type: adam
+    lr: 3.e-5
+    weight_decay: 0.0
+    beta1: 0.9
+    beta2: 0.999
+  scheduler:
+    type: plateau
+    factor: 0.8
+    patience: 5
+    min_lr: 1.e-6

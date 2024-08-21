@@ -1,0 +1,11 @@
+dataset_type: 'sequence_dataset'
+df_path: './datasets/RPI/splits/rpi_1fold.csv'
+batch_size: 1
+num_workers: 0
+col_prot: 'protein'
+col_na: 'na'
+col_label: 'label'
+pin_memory: True
+cache_dir: './cache/rpi'
+loss_type: binary
+strategy: separate

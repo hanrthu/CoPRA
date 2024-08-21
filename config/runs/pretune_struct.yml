@@ -1,0 +1,17 @@
+# iters: 30000
+epochs: 100
+patience: 50
+# output_dir: './outputs/ipa/test_patching_strategy/pdbbind_fixed'
+# output_dir:  './outputs/esm2rinalmo_650M/pretune_struct/pdbbind_cformer_cls_token_interface_pred_only_lora_all_linear'
+output_dir: './outputs/esm2rinalmo_650M/pretune_struct/pdbbind_cformer_cls_token_interface_dist_mask0.15_allparams'
+gpus:
+  - 4
+  - 5
+  - 6
+  - 7
+ckpt: null
+
+# run_name: 'esm2rinalmo_650M_pdbbind_fixed'
+run_name: 'esm2rinalmo_650M_cformer_biolip2_fixed_interface_dist_random_mask0.15_allparams_pred_tokenpooling'
+wandb: true
+num_folds: 1

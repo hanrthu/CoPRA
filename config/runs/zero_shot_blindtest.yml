@@ -1,0 +1,22 @@
+iters: 10500
+epochs: 110
+patience: 50
+# output_dir: './outputs/ipa/test_patching_strategy/pdbbind_fixed'
+# output_dir: './outputs/esm2rinalmo_650M/finetune_struct/pdbbind_separate_cformer_tokenpooling_superdistance_patch256_lr3e-5_pretuned_newsplit_remove'
+output_dir: './outputs/esm2rinalmo_650M/mmCSM/best_tune'
+# output_dir: './outputs/egnn/finetune_struct/pdbbind_patch256'
+# output_dir: './outputs/esm2rinalmo_650M/finetune_struct/pdbbind_separate_cformer_tokenpooling_superdistance_patch256_lr3e-5_newsplit_remove'
+gpus:
+  # - 5
+  - 5
+# ckpt: './outputs/esm2rinalmo_650M/pretune_struct/pdbbind_cformer_cls_token_interface_pred_only_lora_all_linear/log_fold_0/checkpoint/epoch=56-val_loss=0.709.ckpt'
+# ckpt: './outputs/esm2rinalmo_650M/pretune_finetune_struct/pdbbind_fixed_separate_patch256_lr3e-5_newsplit_remove_clip_only/log_fold_3/checkpoint/epoch=58-val_loss=2.349.ckpt'
+# ckpt: './outputs/esm2rinalmo_650M/pretune_finetune_struct/pdbbind_fixed_separate_patch256_lr3e-5_newsplit_remove/log_fold_3/checkpoint/epoch=70-val_loss=2.382.ckpt'
+ckpt: './outputs/esm2rinalmo_650M/pretune_finetune_struct/pdbbind_best/log_fold_3/epoch=68-val_loss=2.247.ckpt'
+# ckpt: null
+
+# run_name: 'esm2rinalmo_650M_pdbbind_fixed'
+# run_name: 'esm_rinalmo_650M_token_patch256'
+run_name: 'esm2rinalmo_mmCSN_patch256'
+wandb: False
+num_folds: 1

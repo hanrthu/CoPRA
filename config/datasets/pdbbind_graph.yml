@@ -1,0 +1,24 @@
+dataset_type: 'graph_dataset'
+# df_path: '/home/HR/PIXberts/datasets/PNA350/splits_corrected/merge_filtered_5_fold_dG_restrict.csv'
+df_path: '/home/HR/PIXberts/datasets/PNA350/splits_corrected/merge_filtered_5_fold_dG_restrict_resplit_remove.csv'
+batch_size: 16
+data_root: '/home/HR/PIXberts/datasets/PNA350/PDBs_filtered'
+num_workers: 0
+col_prot_chain: 'Protein chains'
+col_na_chain: 'RNA chains'
+col_prot: 'Protein sequences'
+col_na: 'RNA sequences'
+col_label: '△G(kcal/mol)'
+pin_memory: True
+cache_dir: './cache/pdbbind_struct'
+loss_type: regression
+strategy: separate
+
+transform:
+  - type: select_atom
+    resolution: backbone  # [backbone, backbone+CB, C_Only]
+  # - type: interface_max_size_patch
+  #   max_size: 512
+  - type: selected_region_with_distmap
+    patch_size: 128
+  - type: subtract_center_of_mass

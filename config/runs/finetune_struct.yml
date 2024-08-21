@@ -1,0 +1,22 @@
+# iters: 10500
+epochs: 140
+patience: 150
+# output_dir: './outputs/ipa/test_patching_strategy/pdbbind_fixed'
+# output_dir: './outputs/esm2rinalmo_650M/finetune_struct/pdbbind_separate_cformer_tokenpooling_superdistance_patch256_lr3e-5_pretuned_newsplit_remove'
+output_dir: './outputs/esm2rinalmo_650M/pretune_finetune_struct/pdbbind_fixed_separate_patch256_lr3e-5_newsplit_remove_clip+interface_mask1'
+# output_dir: './outputs/egnn/finetune_struct/pdbbind_patch256'
+# output_dir: './outputs/esm2rinalmo_650M/finetune_struct/pdbbind_separate_cformer_tokenpooling_superdistance_patch256_lr3e-5_newsplit_remove'
+gpus:
+  - 7
+  # - 7
+# ckpt: './outputs/esm2rinalmo_650M/pretune_struct/pdbbind_cformer_cls_token_interface_pred_only_lora_all_linear/log_fold_0/checkpoint/epoch=56-val_loss=0.709.ckpt'
+# ckpt: './outputs/esm2rinalmo_650M/pretune_struct/pdbbind_cformer_cls_token_interface_dist_only/log_fold_0/checkpoint/epoch=59-val_loss=0.391.ckpt'
+# ckpt: './outputs/esm2rinalmo_650M/pretune_struct/pdbbind_cformer_cls_token_clip_only/log_fold_0/checkpoint/epoch=48-val_loss=0.238.ckpt'
+ckpt: './outputs/esm2rinalmo_650M/pretune_struct/pdbbind_cformer_cls_token_interface_dist_random_mask1/log_fold_0/checkpoint/epoch=91-val_loss=0.824.ckpt'
+# ckpt: null
+
+# run_name: 'esm2rinalmo_650M_pdbbind_fixed'
+# run_name: 'esm_rinalmo_650M_token_patch256'
+run_name: 'esm2rinalmo_random_all_params_mask1_patch256'
+wandb: False
+num_folds: 5

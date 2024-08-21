@@ -1,0 +1,23 @@
+resume: null
+model: 
+  model_type: egnn
+  output_dim: 1
+  in_dim: 41
+  depth: 3
+
+train:
+  max_iters: 30_000
+  val_freq: 1000
+  seed: 2024
+  max_grad_norm: 100.0
+  optimizer:
+    type: adam
+    lr: 1.e-4
+    weight_decay: 0.0
+    beta1: 0.9
+    beta2: 0.999
+  scheduler:
+    type: plateau
+    factor: 0.8
+    patience: 5
+    min_lr: 1.e-6

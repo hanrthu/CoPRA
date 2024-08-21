@@ -1,0 +1,16 @@
+iters: 10500
+epochs: 35
+patience: 50
+# output_dir: './outputs/ipa/test_patching_strategy/pdbbind_fixed'
+# output_dir: './outputs/esm2rinalmo_650M/finetune_struct/pdbbind_separate_cformer_tokenpooling_superdistance_patch256_lr3e-5_pretuned_newsplit_remove'
+output_dir: './outputs/esm2rinalmo_3B/finetune_struct/pdbbind_fixed_separate_patch256_lr3e-5_newsplit_remove'
+# output_dir: './outputs/egnn/finetune_struct/pdbbind_patch256'
+# output_dir: './outputs/esm2rinalmo_650M/finetune_struct/pdbbind_separate_cformer_tokenpooling_superdistance_patch256_lr3e-5_newsplit_remove'
+gpus:
+  - 7
+  # - 7
+ckpt: null
+
+run_name: 'esm2rinalmo3B_patch256'
+wandb: True
+num_folds: 5

@@ -1,0 +1,30 @@
+resume: null
+model: 
+  model_type: ipa
+  pooling: mean
+  output_dim: 1
+  pair_feat_dim: 40
+  node_feat_dim: 640
+  num_layers: 3
+  use_lm: false
+  lora_tune: false
+  lora_rank: 16
+  lora_alpha: 32
+  fix_lms: true
+  representation_layer: 33
+train:
+  max_iters: 30_000
+  val_freq: 1000
+  seed: 2024
+  max_grad_norm: 100.0
+  optimizer:
+    type: adam
+    lr: 1.e-4
+    weight_decay: 0.0
+    beta1: 0.9
+    beta2: 0.999
+  scheduler:
+    type: plateau
+    factor: 0.8
+    patience: 5
+    min_lr: 1.e-6
